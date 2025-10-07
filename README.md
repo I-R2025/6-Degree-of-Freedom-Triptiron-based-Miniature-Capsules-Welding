@@ -65,6 +65,8 @@ The control system can not be tested with hardware. i.e.
 First install nodemon and npm in your distribution and then inside UI folder enter this command.
 <pre> <code>node app.js</code> </pre>
 
+Enter the address http://localhost:3001 in any browser
+
 Following screen can be seen
 
 
