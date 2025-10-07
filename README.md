@@ -68,6 +68,19 @@ First install nodemon and npm in your distribution and then inside UI folder ent
 Following screen can be seen
 
 
-![Alt text](slam.png)
+![Alt text](Tripteron.png)
 
-![Alt text](slam.png)
+Login Screen
+
+![Alt text](Login-screen.png)
+
+First Screen
+
+
+![Alt text](connection-screen.png)
+
+Control Screen
+
+![Alt text](control-screen.png)
+
+
