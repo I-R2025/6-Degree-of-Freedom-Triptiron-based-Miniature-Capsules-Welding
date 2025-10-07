@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/opt_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASES Welding</title>
+    <script src="js/vue.min.js"></script>
+    <script src="js/roslib.min.js"></script>
+    <script src="js/main.js"> </script>
+    <script src="js/RecordRTC.js"> </script>
+</head>
+
+<body class="m-2" onload="">
+    <div class="">
+        <header>
+            <div class="title-box">
+               <!-- <div class="logo">
+                    <img src="img/logo.jpeg" alt="Logo" style="border-radius: 50px;"/>
+                </div>-->
+                <h1 style="font-style: italic; text-align: center;">
+                      6-Degree of Freedom Cartesian Welding System
+                </h1>
+             <!--   <div class="d-flex justify-content-around">
+                    <div class="logo1" class="row col col-sm-12 col-lg-2" style=" height: fit-content; width: fit-content; ">
+                      <img src="img/logo1.jpeg" alt="Logo" style="border-radius: 50px; background: #4c9da5;" />
+                    </div>
+                </div>-->
+            </div>
+         
+        </header>
+    </div>
+    <div class="grid-cols-1 md:grid-cols-3 mb-1 gap-1">
+        <div class="border-black col-span-6 ">
+
+            <div class="manual-controls">
+                <h2 style="padding-block: 0;" class="h2 italic">MANUAL CONTROLS</h2>
+                <div>
+                    <div class="grid-cols-1 md:grid-cols-2 gap-1 p-2">
+                        <div class="border border-black col-span-1 gripper-color-bckgrnd">
+                            <div class="p-3">
+                                <p class="text-center mb-2 bold">GRIPPER CONTROL</p>
+                                <div class="grid grid-cols-2 gap-1 mt-1">
+                                    <button class="btn-settings border border-black text-center btnColor"
+                                        onclick="handleButtonClick('GRIP');gripFunc()" id="grip" >GRIP </button>
+                                    <button class=" btn-settings border border-black text-center btnColor "
+                                        onclick="handleButtonClick('RELAEASE'); releaseFunc() "
+                                        id="release" >RELAEASE</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border border-black col-span-1 position-color-bckgrnd">
+                            <div class="p-3">
+                                <p class="text-center mb-2 bold">POSITION PROCEED</p>
+                                <div class="grid grid-cols-2 gap-1 mt-1 ">
+                                    <button class=" btn-settings border border-black text-center btnColor"
+                                        onclick="handleButtonClick('WELDING'); proceedToWeldingFunc()"
+                                        id="welding" >WELDING</button>
+                                    <button class=" btn-settings border border-black text-center btnColor"
+                                        onclick="handleButtonClick('PARKING'); parkingFunc()"
+                                        id="parking">PARKING</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-black col-span-1 laser-color-bckgrnd">
+                            <div class="p-3">
+                                <p class="text-center mb-2 bold">LASER CONTROL</p>
+                                <div class="grid grid-cols-2 gap-1 mt-1">
+                                    <button class=" btn-settings border border-black text-center btnColor"
+                                        onclick="handleButtonClick('LASER-ON'); laserOnFunc()" id="laserOn">ON</button>
+                                    <button class=" btn-settings border border-black text-center btnColor"
+                                        onclick="handleButtonClick('LASER-OFF'); laserOffFunc()"
+                                        id="laserOff">OFF</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-black col-span-1 welding-color-bckgrnd">
+                            <div class="p-3">
+                                <p class="text-center mb-2 bold">WELDING CONTROL</p>
+                                <div class="grid grid-cols-2 gap-1 mt-1">
+                                    <button class=" btn-settings border border-black text-center btnColor"
+                                        onclick="handleButtonClick('WELD START'); weldStartFunc() " id="weldStart"
+                                        >WELD</button>
+                                    <button class=" btn-settings border border-black text-center btnColor"
+                                        onclick="handleButtonClick('WELD STOP'); weldStopFunc()"
+                                        id="weldStop">STOP</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-black controller-status col-span-1 md:col-span-2">
+            <h2 style="padding-block: 0;" class="h2 italic">CONTROLLER'S STATUS</h2>
+            <div class="colors-grid">
+                <div>
+                    <p class="text-center text-heading mt-1 bold" >LINEAR-X</p>
+                    <div class="colors red-light " id="linx" name="LinearX"></div>
+                    <p class="text-center mt-1 bold mx-2" style="margin-left:20px" id="status">INVALID</p>
+
+
+                </div>
+                                
+                <div>
+                    <p class="text-center text-heading mt-1 bold">LINEAR-Y</p>
+                    <div class="colors  red-light " id="liny" name="LinearY"></div>
+                    <p class="text-center mt-1 bold mx-2" style="margin-left:20px" id="linyStatus">INVALID</p>
+
+                </div>
+                <div>
+                    <p class="text-center text-heading mt-1 bold">LINEAR-Z</p>
+                    <div class="colors  red-light " id="linz" name="LinearZ"></div>
+                    <p class="text-center mt-1 bold mx-2" style="margin-left:25px" id="linzStatus">INVALID</p>
+
+                </div>
+                <div>
+                    <p class="text-center text-heading mt-1 bold">ROTATION</p>
+                    <div class="colors  red-light" id="rotation" name="Rotation"></div>
+                    <p class="text-center  mt-1 bold mx-2" style="margin-left:25px" id="rotStatus">INVALID</p>
+
+                </div>
+                <div>
+                    <p class="text-center  text-heading mt-1 bold">ORIENTATION</p>
+                    <div class="colors  red-light" id="orientation" name="Orientation"></div>
+                    <p class="text-center mt-1 bold mx-2" style="margin-left:25px" id="ortStatus">INVALID</p>
+
+                </div>
+                <div>
+                    <p class="text-center text-heading mt-1 bold">GRIPPER</p>
+                    <div class="colors  red-light" id="gripper" name="Gripper"></div>
+                    <p class="text-center mt-1 bold" style="margin-left:25px" id="gripperStatus">INVALID</p>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+
+    <div class=" grid md:grid-cols-3 gap-1">
+        <div class="col-span-1">
+            <div class="border-black positions-ection">
+                <h2 style="padding-block: 0;" class="h2 italic">POSITIONS</h2>
+                <div class="p-2">
+                    <table class="table-border">
+                        <thead>
+                            <tr class=" grid-cols-3 gap-1">
+                                <th class="style-table">Positions</th>
+                                <th class="style-table">Fine Move <br /> (mm,deg)</th>
+                                <th class="style-table">Current Position <br /> (mm,deg)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class=" grid-cols-3 gap-1">
+                                <td class="style-table">
+                                    <p>LINEAR-X</p>
+
+                                </td>
+                                <td class="style-table">
+
+                                    <input type="number" value="0.0" max="110.0" min="0" step="0.3" id="fPosx"
+                                        name="finePosx"
+                                        onchange="changeFineXFunc(); handleInputChange(this, 'Fine Posx')"
+                                        class="bg-gray-300 text-center  w-full" />
+                                </td>
+                                <td class="style-table">
+                                    <input id="posxCur" name="posxCur" type="text" value=" "
+                                        class="bg-gray-300 text-center  w-full" />
+                                </td>
+                            </tr>
+                            <tr class=" grid-cols-3 gap-1">
+                                <td class="style-table">
+                                    LINEAR-Y
+                                </td>
+                                <td class="style-table">
+                                    <input type="number" id="fPosy" name="finePosy" value="0.0" max="90.0" min="0"
+                                        step="0.3" onchange="changeFineYFunc(); handleInputChange(this, 'Fine Posy')"
+                                        class="bg-gray-300 text-center  w-full" />
+
+                                </td>
+                                <td class="style-table">
+                                    <input id="posyCur" name="posyCur" type="text" value=" "
+                                        class="bg-gray-300 text-center  w-full" />
+                                </td>
+                            </tr>
+                            <tr class=" grid-cols-3 gap-1">
+                                <td class="style-table">
+                                    LINEAR-Z
+                                </td>
+                                <td class="style-table">
+                                    <input id="fPosz" type="number" name="finePosz" value="0.0" max="150.0" min="0"
+                                        step="0.3" onchange="changeFineZFunc(); handleInputChange(this, 'Fine Posz')"
+                                        class="bg-gray-300 text-center  w-full" />
+                                </td>
+                                <td class="style-table">
+                                    <input id="poszCur" type="text" value=" " class="bg-gray-300 text-center  w-full" />
+                                </td>
+                            </tr>
+                            <tr class="grid grid-cols-3 gap-1">
+                                <td class="style-table">
+                                    ORIENTATION
+                                </td>
+                                <td class="style-table">
+                                    <input id="fOrientation" type="number" name="fineOrientation" value="0.0" max="200"
+                                        min="0" step="1"
+                                        onchange="changeFineOrientFunc(); handleInputChange(this, 'Fine Orientation')"
+                                        class="bg-gray-300 text-center  w-full" />
+                                </td>
+                                <td class="style-table">
+                                    <input id="orientationCur" type="text" value=" "
+                                        class="bg-gray-300 text-center  w-full" />
+                                </td>
+                            </tr>
+                            <tr class=" grid-cols-3 gap-1">
+                                <td class="style-table">
+                                    ROTATION
+                                </td>
+                                <td class="style-table">
+                                    <input id="fRotation" type="number" name="fineRotation" max="" min="" value="0.0"
+                                        step="1.0"
+                                        onchange="changeFineRotationFunc() ; handleInputChange(this, 'Fine Rotation')"
+                                        class="bg-gray-300 text-center  w-full" />
+                                </td>
+                                <td class="style-table">
+                                    <input id="rotationCur" type="text" value=" "
+                                        class="bg-gray-300 text-center  w-full" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="border-black col-span-6 " style="margin-top: 8px;">
+
+                <h2 style="padding-block: 0;" class="h2 italic">AUTO JOB SETTINGS</h2>
+                <div class="grid-cols-1 md:grid-cols-2 gap-3 p-3"
+                    style="background-color: #9ac2c6;border-bottom: 1px solid black;">
+                    <div class="col-span-1 flex-end">
+                        <div class=" grid-cols-1 md:grid-cols-2 gap-2 p-3" style="display: flex; align-items: center;">
+                            <div class="col-span-1">
+                                <p class="mb-2" style="font-weight: bold;">OverLoop%</p>
+                                <input type="number" value="0" max="60" min="0"
+                                    onchange="changeOverloopFunc(); handleInputChange(this, 'OverLoop')"
+                                    class="border-black input-style" id="overLoop" />
+                            </div>
+                            <div class="col-span-1" style="display:flex; flex-direction:column; align-items:center;">
+                                <p class="mb-2" style="font-weight: bold;">RPM</p>
+                                <input type="number" value="0"
+                                    onchange="changeRpmFunc(); handleInputChange(this, 'RPM')"
+                                    class="border-black input-style" id="rpm" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 mt-3">
+                        <div class="flex-center">
+                            <button class="btn-settings border border-black btnColor"
+                                onclick="handleButtonClick('TEST/RUN'); testFunc()" id="test">TEST/RUN</button>
+                        </div>
+                        <div class=" grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                            <button class=" btn-settings border border-black btnColor"
+                                onclick="handleButtonClick('SET'); setFunc()" id="set">SET</button>
+                            <button class=" btn-settings border border-black btnColor"
+                                onclick="handleButtonClick('START JOB'); startJobFunc()" id="startJob" disabled>START</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    
+                    <button class=" btn-estop mt-3 w-full py-1" id="eStopBtn" name="emergencyStopButton"
+                        onclick="handleButtonClick('EMERGENCY STOP'); eStopFunc()">EMERGENCY STOP
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-1 md:col-span-2 camera-feed-boxes">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
+                <div class="col-span-1">
+                    <div class="border-black">
+                        <h2 style="padding-block: 0;" class="h2 italic myText">SIDE CAM(X-Z)</h2>
+                        <div class=" h-80  overflow-scroll ">
+
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <button
+                                class="displayCam btn btn-primary fs-2 fw-bolder me-md-2  border-gray-500 text-white bg-gray-500 mr-2 w-24 p-2 ms-auto"
+                                 onclick="handleButtonClick('Display Camera'); openVideoFullscreen1();" id="cameraDisplay" type="button"
+                               style="height: 55px; font-size: 20px;font-weight: bold;" >SIDE CAM(X-Z)</button> 
+                            </div>
+                           
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div style="height: 250px;" class="col-span-1">
+                    <div class="border-black ">
+                        <h2 style="padding-block: 0;" class="h2 myText italic">FRONT CAM(Y-Z)</h2>
+                        <div class=" h-80  overflow-scroll ">
+                            <div class="embed-responsive embed-responsive-16by9">
+                              
+                                <button
+                                class="displayCam1 btn btn-primary fs-2 fw-bolder me-md-2  border-gray-500 text-white bg-gray-500 mr-2 w-24 p-2 ms-auto"
+                                 onclick="handleButtonClick('Display Camera'); openVideoFullscreen2();" id="cameraDisplay" type="button"
+                               style="height: 55px; font-size: 20px;font-weight: bold;" >FRONT CAM(Y-Z)</button> 
+                            </div> 
+
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div style="padding-block: 0;" class="log-box w-full myText h1 italic border-black bg-gray-400" id="log">
+                STATUS LOG
+                <div style="position: relative;">
+                    <textarea rows="" id="textArea" class=" border-black overflow-scroll fw-4 w-full" readonly></textarea>
+                </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex button-container">
+               
+                <div class="homing">
+                    <button
+                    class="btn btn-primary fs-2 fw-bolder me-md-2  border-gray-500 text-white bg-gray-500 mr-2 w-24 p-2 ms-auto"
+                     name="homing" onclick="handleButtonClick('HOMING'); homingFunc() " id="homing" type="button"
+                    style="height: 50px; font-size: 20px;font-weight: bold;" >HOMING</button>
+                      
+                    </button>
+                </div>
+          
+                <div class="clrfault">
+                    <button
+                    class="btn btn-primary fs-2 fw-bolder me-md-2 border-gray-500 text-white bg-gray-500 mr-2 w-24 p-2 ms-auto"
+                     name="clearFault" onclick="handleButtonClick('CLEAR FAULT'); clrFaultFunc() " id="clrfault" type="button"
+                    style="height: 50px; font-size: 20px;font-weight: bold;" >CLEAR FAULT</button>
+                      
+                    </button>
+                </div>
+
+                <div class="resetall">
+                    <button
+                    class="btn btn-primary fs-2 fw-bolder me-md-2 border-gray-500 text-white bg-gray-500 mr-2 w-24 p-2 ms-auto"
+                     name="resetAll" onclick="handleButtonClick('RESET ALL'); resetallFunc() " id="resetall" type="button"
+                    style="height: 50px; font-size: 20px;font-weight: bold;" >RESET ALL</button>
+                      
+                    </button>
+                </div>
+               
+               
+                <button
+                    class="btn btn-primary fs-2 fw-bolder me-md-2 border-gray-500 text-white bg-gray-500 mr-2 w-24 p-2 ms-auto"
+                    id="saveParam" name="saveParameter"  type="button"
+                    style="height: 50px; font-size: 20px;font-weight: bold; margin-top:1px">SAVE PARAMETERS</button>
+
+                <button class="btn btn-primary border-gray-500 text-white bg-gray-500 w-36 p-2 mr-2" id="createLogBtn"
+                    name="saveButton" type="button" onclick="createAndDownloadLogFile()"
+                    style="height: 50px; font-size: 20px; font-weight: bold;">SAVE LOG</button>
+
+                <button class="btn btn-primary border-gray-500 text-white bg-gray-500 w-36 p-2" id="exitBtn"
+                    name="exitButton" onclick="exitFunc()" type="button"
+                    style="height: 50px; font-size: 20px; font-weight: bold;">EXIT</button>
+            </div>
+        </div>
+        
+    </div>
+    
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span1 class="close">&times;</span1>
+          <p>Please Select where you want to go?</p>
+          <button id="logoutButton">Logout</button>
+          <button id="shutDownButton">ShutDown</button>
+          <button id="cancelButton" name="cancelButton" onclick="cancelFunc()" type="button">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Cancel Button Modal -->
+    <div id="myModal2" class="modal modal-first">
+        <div class="modal-content  modal-content-first">
+          <span class="close close-exit">&times;</span>
+          <p>Are you sure you want to exit?</p>
+          <button id="yesExitButton">Yes</button>
+          <button id="noExitButton">No</button>
+        </div>
+      </div> 
+    </div>
+
+    <script>
+
+function openVideoFullscreen1() {
+            var newWindow = window.open('https://192.168.0.90/#view@user:Qaiser1234', '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, fullscreen=yes');
+            if (newWindow) {
+                newWindow.focus();
+            }
+        }
+
+ function openVideoFullscreen2() {
+            var newWindow = window.open('https://192.168.1.89/#view@user:Qaiser1234', '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, fullscreen=yes');
+            if (newWindow) {
+                newWindow.focus();
+            }
+        }
+
+
+    </script>
+   
+   <script src="js/parameters.js"> </script>
+   <script src="js/opt_script.js"> </script>
+    
+
+
+</body>
+
+</html>

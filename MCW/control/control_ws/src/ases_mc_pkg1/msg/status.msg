@@ -1,0 +1,13 @@
+float32 Position_x
+float32 Position_y
+float32 Position_z
+float32 Position_o
+float32 Position_g
+float32 Position_r
+int32 GR_g
+float32 Current_x
+float32 Current_y
+float32 Current_z
+float32 Current_o
+float32 Current_g
+float32 Current_r

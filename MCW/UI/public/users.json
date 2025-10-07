@@ -1,0 +1,16 @@
+[
+  {
+    "userid": "12345",
+    "username": "abc",
+    "password": "123@abc",
+    "Designation": "Engineer",
+    "Email": "I.R1991@outlook.com",
+    "Contact #": "173333333333",
+    "status": "admin"
+  },
+  {
+    "userid": "54321",
+    "password": "123@abc",
+    "status": "user"
+  }
+]

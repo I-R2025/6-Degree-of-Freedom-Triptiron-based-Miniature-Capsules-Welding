@@ -1,0 +1,8 @@
+prefix=/media/izza/Data/OP/latest/latest/control/control_ws/install
+
+Name: ases_mc_pkg1
+Description: Description of ases_mc_pkg1
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

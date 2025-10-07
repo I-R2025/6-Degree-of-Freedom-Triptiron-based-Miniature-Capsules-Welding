@@ -1,0 +1,2 @@
+ases_mc_pkg1
+-DCATKIN_DEVEL_PREFIX=/media/izza/Data/OP/latest/latest/control/control_ws/devel -DCMAKE_INSTALL_PREFIX=/media/izza/Data/OP/latest/latest/control/control_ws/install -G Unix Makefiles

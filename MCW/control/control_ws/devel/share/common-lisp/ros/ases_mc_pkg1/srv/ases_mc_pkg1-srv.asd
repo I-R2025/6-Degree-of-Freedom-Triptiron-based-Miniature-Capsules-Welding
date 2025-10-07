@@ -1,0 +1,23 @@
+
+(cl:in-package :asdf)
+
+(defsystem "ases_mc_pkg1-srv"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils )
+  :components ((:file "_package")
+    (:file "automatic_job" :depends-on ("_package_automatic_job"))
+    (:file "_package_automatic_job" :depends-on ("_package"))
+    (:file "axis_motion" :depends-on ("_package_axis_motion"))
+    (:file "_package_axis_motion" :depends-on ("_package"))
+    (:file "grip_release" :depends-on ("_package_grip_release"))
+    (:file "_package_grip_release" :depends-on ("_package"))
+    (:file "homing_axis_srv" :depends-on ("_package_homing_axis_srv"))
+    (:file "_package_homing_axis_srv" :depends-on ("_package"))
+    (:file "laser_control" :depends-on ("_package_laser_control"))
+    (:file "_package_laser_control" :depends-on ("_package"))
+    (:file "parking" :depends-on ("_package_parking"))
+    (:file "_package_parking" :depends-on ("_package"))
+    (:file "trajectory" :depends-on ("_package_trajectory"))
+    (:file "_package_trajectory" :depends-on ("_package"))
+    (:file "welding" :depends-on ("_package_welding"))
+    (:file "_package_welding" :depends-on ("_package"))
+  ))

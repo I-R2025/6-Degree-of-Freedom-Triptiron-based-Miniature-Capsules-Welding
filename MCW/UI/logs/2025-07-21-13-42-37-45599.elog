@@ -1,0 +1,87 @@
+7/21/2025, 1:42:37 PM: User 45599 logged in
+7/21/2025, 1:42:46 PM: CONNECT button clicked7/21/2025, 1:43:48 PM: HOMING button clicked 
+7/21/2025, 1:45:02 PM: RELAEASE button clicked 
+7/21/2025, 1:47:21 PM: GRIP button clicked 
+7/21/2025, 2:03:17 PM: SET button clicked 
+7/21/2025, 2:03:23 PM: WELD START button clicked 
+7/21/2025, 2:03:27 PM: WELD STOP button clicked 
+7/21/2025, 2:03:35 PM: WELD STOP button clicked 
+7/21/2025, 2:03:59 PM: WELD START button clicked 
+7/21/2025, 2:04:02 PM: WELD STOP button clicked 
+7/21/2025, 2:04:03 PM: WELD STOP button clicked 
+7/21/2025, 2:04:28 PM: TEST/RUN button clicked 
+7/21/2025, 2:06:05 PM: START JOB button clicked 
+7/21/2025, 2:08:01 PM: TEST/RUN button clicked 
+7/21/2025, 2:10:30 PM: RELAEASE button clicked 
+7/21/2025, 2:11:23 PM: HOMING button clicked 
+
+7/21/2025, 2:12:10 PM: Error: 'E: PU29, MCode : 0x1000000b'7/21/2025, 2:13:18 PM: RELAEASE button clicked 
+7/21/2025, 2:13:36 PM: GRIP button clicked 
+7/21/2025, 2:14:36 PM: TEST/RUN button clicked 
+7/21/2025, 2:14:41 PM: SET button clicked 
+7/21/2025, 2:14:41 PM: TEST/RUN button clicked 
+7/21/2025, 2:15:01 PM: SET button clicked 
+7/21/2025, 2:15:01 PM: TEST/RUN button clicked 
+7/21/2025, 2:15:15 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:15:36 PM: RELAEASE button clicked 
+7/21/2025, 2:15:50 PM: GRIP button clicked 
+7/21/2025, 2:16:23 PM: HOMING button clicked 
+7/21/2025, 2:17:06 PM: RELAEASE button clicked 
+7/21/2025, 2:17:24 PM: GRIP button clicked 
+7/21/2025, 2:21:45 PM: RELAEASE button clicked 
+7/21/2025, 2:22:16 PM: GRIP button clicked 
+7/21/2025, 2:24:38 PM: SET button clicked 
+7/21/2025, 2:24:41 PM: TEST/RUN button clicked 
+7/21/2025, 2:24:52 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:24:59 PM: TEST/RUN button clicked 
+7/21/2025, 2:25:09 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:25:12 PM: TEST/RUN button clicked 
+7/21/2025, 2:25:46 PM: RELAEASE button clicked 
+7/21/2025, 2:25:57 PM: GRIP button clicked 
+7/21/2025, 2:26:15 PM: RELAEASE button clicked 
+7/21/2025, 2:26:25 PM: GRIP button clicked 
+7/21/2025, 2:27:23 PM: SET button clicked 
+7/21/2025, 2:27:24 PM: TEST/RUN button clicked 
+7/21/2025, 2:27:29 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:27:34 PM: SET button clicked 
+7/21/2025, 2:27:35 PM: TEST/RUN button clicked 
+7/21/2025, 2:28:20 PM: SET button clicked 
+7/21/2025, 2:28:20 PM: TEST/RUN button clicked 
+7/21/2025, 2:28:25 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:28:40 PM: SET button clicked 
+7/21/2025, 2:29:32 PM: SET button clicked 
+7/21/2025, 2:29:58 PM: SET button clicked 
+7/21/2025, 2:30:03 PM: TEST/RUN button clicked 
+7/21/2025, 2:30:20 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:30:36 PM: RELAEASE button clicked 
+7/21/2025, 2:33:14 PM: GRIP button clicked 
+7/21/2025, 2:34:37 PM: SET button clicked 
+7/21/2025, 2:35:47 PM: TEST/RUN button clicked 
+7/21/2025, 2:36:18 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:36:28 PM: TEST/RUN button clicked 
+7/21/2025, 2:36:45 PM: SET button clicked 
+7/21/2025, 2:36:46 PM: TEST/RUN button clicked 
+7/21/2025, 2:38:44 PM: SET button clicked 
+7/21/2025, 2:38:47 PM: TEST/RUN button clicked 
+7/21/2025, 2:39:02 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:40:13 PM: TEST/RUN button clicked 
+7/21/2025, 2:41:07 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:41:12 PM: SET button clicked 
+7/21/2025, 2:41:14 PM: TEST/RUN button clicked 
+7/21/2025, 2:43:29 PM: HOMING button clicked 
+7/21/2025, 2:47:45 PM: EMERGENCY STOP button clicked 
+7/21/2025, 2:57:58 PM: SET button clicked 
+7/21/2025, 2:58:20 PM: TEST/RUN button clicked 
+7/21/2025, 2:59:57 PM: START JOB button clicked 
+7/21/2025, 3:00:18 PM: EMERGENCY STOP button clicked 
+7/21/2025, 3:00:22 PM: WELD STOP button clicked 
+7/21/2025, 3:00:28 PM: WELD START button clicked 
+7/21/2025, 3:00:30 PM: WELD STOP button clicked 
+7/21/2025, 3:00:34 PM: START JOB button clicked 
+7/21/2025, 3:02:15 PM: TEST/RUN button clicked 
+7/21/2025, 3:02:55 PM: EMERGENCY STOP button clicked 
+7/21/2025, 3:03:01 PM: RELAEASE button clicked 
+7/21/2025, 3:06:13 PM: HOMING button clicked 
+7/21/2025, 3:06:51 PM: PARKING button clicked 
+7/21/2025, 3:07:01 PM: PARKING button clicked 
+7/21/2025, 3:07:11 PM: PARKING button clicked 

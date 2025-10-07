@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+    <link
+      href="css/fontawesome-free-6.5.1-web/css/fontawesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/w3.css" />
+    <link href="./bootstrap.min.js" />
+    <link rel="stylesheet" href="css/styles_login.css" />
+
+    <script src="vue.min.js">	</script>
+    <script src="roslib.min.js">	</script>
+    <script src="js/file_utils.js"></script>
+    <script src="js/login.js"></script>
+  </head>
+
+  <body>
+      
+    <div class="container">
+      <div class="box-form">
+        <div class="left">
+          <div class="overlay">
+            <h2>
+              6-Degree of Freedom Cartesian Welding System
+            </h2>
+          </div>
+        </div>
+
+        <div class="right">
+          <form id="loginForm" action="javascript:void(0);" method="post">
+            <h1>LOGIN</h1>
+            <div class="inputs">
+              <div class="inputWithIcon">
+                <input
+                  type="text"
+                  style="padding-left: 40px"
+                  placeholder="Enter User name", autofocus()
+                  id="userid" 
+                  required
+                />
+                <img
+                  class="icon"
+                  src="img/user-32.png"
+                  alt="icon"
+                  width="20px"
+                  heigh="15px"
+                />
+              </div>
+              <br />
+              <div class="inputWithIcon">
+                <input
+                  type="password"
+                  style="padding-left: 40px"
+                  placeholder="Enter Password"
+                  id="password"
+                  required
+                />
+                <img
+                  class="icon"
+                  src="img/lock.png"
+                  alt="icon"
+                  width="24px"
+                  heigh="20px"
+                />
+                <img
+                  class="icon1"
+                  src="img/eye-hide.png"
+                  alt="Show Password"
+                  onclick="togglePasswordVisibility()"
+                />
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div
+              class="error-message"
+              id="errorMessage"
+              style="display: none"
+            ></div>
+            <br />
+            <div class="two-button">
+              <button
+                type="submit"
+                id="loginButton"
+                onclick="authenticateUserAndCreateLogFile()"
+              >
+                SUBMIT
+              </button>
+
+              <button type="button" id="cancelButton" onclick="openDialog()">
+                CANCEL
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Confirmation dialog content -->
+
+        <div class="confirmation-dialog" id="dialogOverlay">
+          <span class="close" onclick="closeDialog()">&times;</span>
+          <div
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            <p>Are you sure you want to cancel?</p>
+            <button onclick="handleYes(event)" class="confirmation-button">
+              Yes
+            </button>
+            <button onclick="handleNo(event)" class="cancel-button">No</button>
+          </div>
+        </div>
+        <!-- Custom modal for error messages -->
+        <div class="modal w3-animate-right" id="errorModal">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p id="modalText"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+       window.onload = function(){
+        console.log('OK')
+        document.getElementById('userid').focus();
+       }
+    </script>
+  </body>
+</html>

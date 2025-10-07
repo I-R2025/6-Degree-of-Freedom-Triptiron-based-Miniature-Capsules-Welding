@@ -1,0 +1,6 @@
+<launch>
+	<rosparam command="load" file="$(find ases_mc_pkg1)/config/ases_param.yaml" />
+	<node pkg="ases_mc_pkg1" type="ases_node" name="ases_publisher" output="screen">
+	</node>
+	
+</launch>

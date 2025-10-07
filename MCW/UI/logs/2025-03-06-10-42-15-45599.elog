@@ -1,0 +1,9 @@
+3/6/2025, 10:42:15 AM: User 45599 logged in
+3/6/2025, 10:42:20 AM: CONNECT button clicked
+3/6/2025, 10:42:28 AM: HOMING button clicked
+3/6/2025, 10:42:43 AM: HOMING button clicked
+3/6/2025, 10:43:39 AM: Error: 'PU09, MCode : 0x21000002'
+3/6/2025, 10:43:44 AM: Error: 'FU01, MCode : 0x21000002'
+3/6/2025, 10:43:49 AM: Error: 'PU01, MCode : 0x21000002'
+3/6/2025, 10:43:50 AM: Error: 'FU01, MCode : 0x31000001'
+3/6/2025, 10:43:55 AM: Error: 'PU01, MCode : 0x21000002'

@@ -1,0 +1,35 @@
+3/5/2025, 10:25:15 AM: User 45599 logged in
+3/5/2025, 10:25:27 AM: Error: 'PU01, MCode : 0x21000002'
+3/5/2025, 10:25:32 AM: Error: 'FU01, MCode : 0x21000002'
+3/5/2025, 10:25:37 AM: CONNECT button clicked
+3/5/2025, 10:25:37 AM: Error: 'PU01, MCode : 0x21000002'
+3/5/2025, 10:25:42 AM: Error: 'FU01, MCode : 0x21000002'
+3/5/2025, 10:25:47 AM: Error: 'PU01, MCode : 0x21000002'
+3/5/2025, 10:25:53 AM: Error: 'FU01, MCode : 0x21000002'
+3/5/2025, 10:25:53 AM: HOMING button clicked
+3/5/2025, 10:25:58 AM: Error: 'PU01, MCode : 0x21000002'
+3/5/2025, 10:26:02 AM: CLEAR FAULT button clicked
+3/5/2025, 10:26:03 AM: Error: 'FU01, MCode : 0x21000002'
+3/5/2025, 10:26:08 AM: Error: 'H30, MCode : 0x21000002'
+3/5/2025, 10:26:12 AM: Error: 'CF01, MCode : 0x31000001'
+3/5/2025, 10:26:12 AM: Error: 'CF01, MCode : 0x31000001'
+3/5/2025, 10:26:17 AM: Error: 'PU01, MCode : 0x21000002'
+3/5/2025, 10:26:19 AM: CONNECT button clicked
+3/5/2025, 10:26:23 AM: CONNECT button clicked
+3/5/2025, 10:26:26 AM: CONNECT button clicked
+3/5/2025, 10:26:42 AM: CONNECT button clicked
+3/5/2025, 10:26:46 AM: CONNECT button clicked
+3/5/2025, 10:26:50 AM: CLEAR FAULT button clicked
+3/5/2025, 10:26:59 AM: HOMING button clicked3/5/2025, 10:27:27 AM: Display Camera button clicked 
+3/5/2025, 10:28:04 AM: Display Camera button clicked 
+3/5/2025, 10:28:45 AM: CLEAR FAULT button clicked 
+3/5/2025, 10:28:57 AM: HOMING button clicked 
+
+3/5/2025, 10:29:04 AM: Error: 'E: PU35, MCode : 0x0'3/5/2025, 10:29:11 AM: Display Camera button clicked 
+3/5/2025, 10:31:16 AM: CLEAR FAULT button clicked 
+3/5/2025, 10:31:20 AM: Display Camera button clicked 
+3/5/2025, 10:31:46 AM: Display Camera button clicked 
+3/5/2025, 10:32:16 AM: HOMING button clicked 
+3/5/2025, 10:32:51 AM: Display Camera button clicked 
+3/5/2025, 10:33:16 AM: CLEAR FAULT button clicked 
+3/5/2025, 10:33:26 AM: HOMING button clicked 

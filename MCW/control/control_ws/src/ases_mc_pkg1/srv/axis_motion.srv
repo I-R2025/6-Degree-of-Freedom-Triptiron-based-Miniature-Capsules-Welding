@@ -1,0 +1,15 @@
+string Mode
+float64 position_x
+float64 position_y
+float64 position_z
+float64 position_o
+float64 position_g
+float64 position_r
+float64 velocity_x
+float64 velocity_y
+float64 velocity_z
+float64 velocity_o
+float64 velocity_g
+float64 velocity_r
+---
+bool success

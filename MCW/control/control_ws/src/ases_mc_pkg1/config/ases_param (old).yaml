@@ -1,0 +1,21 @@
+deviceName: "EPOS2"
+protocolStackName: "MAXON_RS232"
+interfaceName: "RS232"
+portName: "/dev/ttyS1"
+BaudRate: 1000000
+Timeout: 500
+NodeId: 1
+sensortype: 1
+encoderresolution: 500
+invertedpolarity: 0
+xaxishomeposoffset: 140
+yaxishomeposoffset: 155
+zaxishomeposoffset: 225
+xcountpermm: 10248 
+ycountpermm: 10248 
+zcountpermm: 10248 
+xparkingpos: 50
+yparkingpos: 50
+zparkingpos: 50
+
+

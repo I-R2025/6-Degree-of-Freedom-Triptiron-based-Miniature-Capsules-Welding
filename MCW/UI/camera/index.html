@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axis M5075-G Video Recording</title>
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+    <style>
+        .camera-feed-boxes {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="camera-feed-boxes">
+    <h2 class="h2 italic myText">AXIS M5075-G Camera Feed</h2>
+    <div>
+        <iframe id="cameraFrame"
+                src="http://webcam1.ci.burlington.vt.us/mjpg/video.mjpg"
+                width="100%"
+                height="400"
+                frameborder="0">
+        </iframe>
+    </div>
+    <button id="startButton" class="button">Start Recording</button>
+    <button id="stopButton" class="button" disabled>Stop Recording</button>
+    <button id="pauseButton" class="button" disabled>Pause Recording</button>
+</div>
+
+<script>
+let recorder;
+let isRecording = false;
+let isPaused = false;
+
+document.getElementById('startButton').addEventListener('click', function() {
+    const cameraFeedUrl = 'http://qaiser:qaiser1234@192.168.0.90/mjpg/video.mjpg';
+
+    recorder = RecordRTC(cameraFeedUrl, {
+        type: 'video'
+    });
+
+    recorder.startRecording();
+    isRecording = true;
+    isPaused = false;
+    this.disabled = true; // Disable start button
+    document.getElementById('stopButton').disabled = false; // Enable stop button
+    document.getElementById('pauseButton').disabled = false; // Enable pause button
+});
+
+document.getElementById('stopButton').addEventListener('click', function() {
+    recorder.stopRecording(function() {
+        const blob = recorder.getBlob();
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.style.display = 'block';
+        a.href = url;
+        a.download = 'recorded-video.webm';
+        a.innerText = 'Download Recorded Video';
+        document.body.appendChild(a);
+    });
+
+    isRecording = false;
+    isPaused = false;
+    this.disabled = true; // Disable stop button
+    document.getElementById('startButton').disabled = false; // Enable start button
+    document.getElementById('pauseButton').disabled = true; // Disable pause button
+});
+
+document.getElementById('pauseButton').addEventListener('click', function() {
+    if (isRecording) {
+        if (isPaused) {
+            recorder.resumeRecording();
+            this.innerText = 'Pause Recording'; // Change button text
+        } else {
+            recorder.pauseRecording();
+            this.innerText = 'Resume Recording'; // Change button text
+        }
+        isPaused = !isPaused;
+    }
+});
+</script>
+
+</body>
+</html>

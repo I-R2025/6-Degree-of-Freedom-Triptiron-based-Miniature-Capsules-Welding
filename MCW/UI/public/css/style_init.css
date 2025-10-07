@@ -1,0 +1,705 @@
+:root {
+  --main-bg-color: #739146;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden; 
+}
+
+/* Header Part */
+
+header {
+  background: #4c9da5;
+  padding: 5px;
+  width: 100%;
+}
+
+.logo img {
+  max-width: 5.8vw;
+  height: auto;
+  margin-left: 15px;
+ 
+}
+.logo1 img {
+  max-width: 5.8vw;
+  height: auto;
+  margin-right: 15px;
+  background: #4c9da5;
+ 
+}
+
+/* Main Section Left Half */
+.init-heading {
+  display: flex;
+  font-size: 2.0rem;
+  color:#3c2383;
+  font-weight: bold;
+  justify-content: space-around;
+  margin-top:23px;
+  margin-left:30px;
+
+}
+@media (min-width: 992px) {
+  .col-lg-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 90.333%;
+    max-width: 93.333%;
+  }
+}
+.left-half {
+  border: 1px solid rgb(176, 233, 205);
+  background: linear-gradient(135deg, #e6a6d391 30%, #e6b14f 100%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 8px 8px;
+  height: 20vh;
+
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  color: rgba(44, 115, 24, 0.86);
+}
+
+.text-center {
+  text-align: center !important;
+  font-weight: bolder;
+}
+.controller-led {
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.ledSet {
+  margin-top: 5px;
+  margin-left: 9px;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: purple;
+  /* cursor: pointer; */
+  margin-left: 40px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 40px;
+}
+.textStyle {
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: -91px;
+}
+
+.red-light {
+  background: red;
+}
+
+.green-light {
+  background: green;
+}
+.purple-light {
+  background-color: purple; /* Define purple color */
+}
+/* Right Half */
+
+.right-half {
+  border: 1px solid rgb(167, 161, 161);
+  background: linear-gradient(135deg, #9bc6df91 30%, #b8985c 100%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  height: 20vh; /* Adjust the height as needed */
+}
+
+.vision-led {
+  display: flex;
+  justify-content: space-around;
+}
+
+.configuration {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.divider {
+  height: full;
+  width: 1px;
+  border: 1px solid black;
+}
+
+/* Media Query */
+/* 
+ @media (max-width: 1450px)  {
+  /* .controller-led{
+    display: block!important;;
+  }
+  .bottom-panel{
+    display: block!important;
+  }
+  #estop, .estop, .viewlog, .proceed, .loadparam, .exit{
+    width: 100%; 
+    margin-top: 50px;
+  }  */
+
+@media (max-width: 1440px) {
+  .controller-led {
+    display: block !important;
+  }
+  /* .bottom-panel{
+    display: block!important;
+  } */
+}
+
+/* Configuration Section */
+.middle-left-half {
+  background: linear-gradient(315deg, #91f0fa7a 30%, #576ba57d 100%);
+  height:448px!important;
+  border: 1px solid rgb(167, 161, 161);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 2px 2px;
+  width: 59.9vw;
+}
+
+h3 {
+  border: 1px solid black;
+  background: var(--main-bg-color);
+  font-size: 1.5vw;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+
+.w-100 {
+  width: 84%;
+}
+.col-md-6 button.w-100 {
+  width: 84% !important;
+}
+
+/* PART 2 */
+b,
+strong {
+    font-size: 2.0rem!important;
+    font-style: italic;
+    margin-left: 50px;
+    color: rgba(44, 115, 24, 0.86) !important;
+    font-weight: bolder!important;
+}
+.indicator-status {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  background-color: #b8985c;
+}
+
+.mainHeading {
+  margin-left: 480px;
+}
+/* Buttons Claas */
+.connect,
+.homing,
+.clrfault,
+.resetall {
+  background-color: rgba(101, 114, 114, 0.908);
+  color: black;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 10px;
+  margin-top: -100px;
+  margin-left: 52px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.connect,
+.homing,
+.resetall {
+  width: 180px;
+}
+
+.connect:hover {
+  color: #fff;
+  /* background-color: #85c6d4; */
+}
+
+.homing:hover {
+  background-color: #85c6d4;
+  color: white;
+}
+
+.clrfault:hover {
+  background-color: #85c6d4;
+  color: white;
+}
+
+.resetall:hover {
+  background-color: #85c6d4;
+  color: white;
+}
+
+/* Status Log Section */
+
+.middle-right-half {
+  background: linear-gradient(135deg, #84b88f91 30%, #847486 100%);
+  border: 1px solid rgb(167, 161, 161);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 2px 2px;
+  width: 49%;
+  height: 450px;
+  overflow: scroll; 
+}
+
+#log {
+  font-size: 16px;
+  position: relative;
+  height: 380px; 
+  overflow: scroll; 
+}
+
+/* Style for webkit browsers */
+#log::-webkit-scrollbar {
+  width: 40px; 
+}
+
+#log::-webkit-scrollbar-track {
+  background: #032862; 
+}
+
+#log::-webkit-scrollbar-thumb {
+  background: #888; /*scrollbar handle*/
+  border-radius: 20px; 
+  border: 6px solid #020810; 
+}
+
+#log::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar handle on hover */
+}
+#log > span {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure the heading is above the scrollbar */
+}
+
+b,
+strong {
+  font-weight: bolder;
+  font-size: 22px;
+  font-style: italic;
+  margin-left: 50px;
+  color: rgba(219, 4, 155, 0.863);
+}
+/* Footer */
+
+.bottom-panel {
+  background: linear-gradient(235deg, #a9ddb3b2 30%, #38896f57 100%);
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 22.5vh;
+}
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+.estop,
+.viewlog,
+.proceed,
+.loadparam,
+.exit {
+  padding: 20px 50px;
+  background-color: rgba(106, 121, 121, 0.908);
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#userManagementBtn {
+  padding: 20px 50px;
+  background-color: rgba(106, 121, 121, 0.908);
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-left: 200px;
+}
+.viewlog {
+  position: relative; /* Add relative positioning to the button */
+  padding-left: 40px; }
+
+
+#estop {
+  background-color: red;
+}
+#estop:active {
+  transform: translateY(4px);
+}
+#estop:hover {
+  background-color: #eb5151;
+}
+
+.viewlog:hover {
+  background-color: #9aa09a;
+}
+
+.viewlog:active {
+  transform: translateY(4px);
+}
+button:disabled {
+  background-color: #ada9a9;
+  color: #666;
+}
+
+.proceed:active {
+  transform: translateY(4px);
+}
+.proceed:hover {
+  background-color: #9aa09a;
+}
+
+.loadparam:active {
+  transform: translateY(4px);
+}
+
+.loadparam:hover {
+  background-color: #9aa09a;
+}
+
+.exit:active {
+  transform: translateY(4px);
+}
+.exit:hover {
+  background-color: #9aa09a;
+}
+
+.calendar-icon {
+  width: 30px;
+  height: 35px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+.calendar-icon:hover {
+  background-color: lightblue; 
+  border-radius: 5%; 
+  padding: 5px; 
+}
+/* Exit Button Modal Class for NewUser Form */
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 60%;
+  top: 15%;
+  overflow: auto;
+}
+
+/* Modal Content */
+.modal-content-second {
+  background-color: #ccbc97f2 !important;
+  border-radius: 10px;
+  font-size: 24px;
+  color: rgb(112, 32, 5) !important;
+  font-weight: 700;
+  width: 80% !important;
+  height: 50%;
+  margin: 20% 0%; /* 15% from the top and centered */
+  padding: 25px;
+  display: block !important;
+  border: 1px solid #413737;
+}
+
+.modal-content-second button {
+  border: none;
+  background:grey;
+  padding: 10px 30px;
+  border-radius: 3px;
+  color: rgb(112, 32, 5) !important;
+  font-weight: 600;
+  font-size: 18px;
+  width: 30%;
+  margin-top: 20px;
+  margin-left: 50px;
+  
+}
+
+.modal-content-second button:hover {
+  background: #9e583c;
+}
+
+/* The Close Button */
+.close-second {
+  color: #3b1303;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+ 
+}
+
+.close-second:hover,
+.close-second:focus {
+  color: black;
+  text-decoration: none;
+  cursor:pointer;
+}
+/* Exit button in bottom panel */
+/* Modal Content */
+.modal-content-first {
+  background-color: #ccbc97f2 !important;
+  border-radius: 10px;
+  font-size: 24px;
+  color: rgb(112, 32, 5) !important;
+  font-weight: 700;
+  width: 25% !important;
+  height: 20%;
+  margin: 20% 0%; /* 15% from the top and centered */
+  padding: 30px;
+  display: block !important;
+  border: 1px solid #413737;
+}
+
+.modal-content-first button {
+  border: none;
+  background:grey;
+  padding: 10px 30px;
+  border-radius: 3px;
+  color: rgb(112, 32, 5) !important;
+  font-weight: 600;
+  font-size: 18px;
+  width: 30%;
+  margin-top: 20px;
+  margin-left: 50px;
+  
+}
+
+.modal-content-first button:hover {
+  background: #9e583c;
+}
+
+/* The Close Button */
+.close-first {
+  color: #3b1303;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+ 
+}
+
+.close-first:hover,
+.close-first:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#userManagementModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d4a49de5;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+/* CSS for form */
+#addNewUserForm {
+  width: 400px; 
+  height: 450px; 
+  background-color: #6eb8bb; 
+  padding: 20px; 
+  margin: 10px auto; 
+  border: 1px solid rgba(224, 108, 13, 0.357);
+  background-image: url('../img/bckground5.jpg');
+  background-size: 100% 100%;
+  border-radius: 10px;
+  background-repeat: no-repeat;   
+}
+
+/* CSS for radio buttons */
+input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+  transform: scale(1.5); 
+  margin-right: 8px; 
+}
+
+/* CSS for labels */
+label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+button[type="submit"] {
+  margin-top: 50px;
+  width: 162px;
+  margin-left: 14px;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #c3bcbc;
+  transition: background-color 0.3s ease;
+}
+button#addUserButton:hover {
+  background-color: #5c6369; /* Change background color on hover */
+}
+button[id="removeUserButton"] {
+  margin-top: 50px;
+  width: 162px;
+  margin-left: 14px;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #c3bcbc;
+  transition: background-color 0.3s ease;
+}
+button#removeUserButton:hover {
+  background-color: #5c6369; /* Change background color on hover */
+ 
+}
+
+/* CSS for modal fields */
+.modal-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  overflow: visible;
+  margin-left: 8px;
+}
+#exitButton {
+  width: 162px;
+  margin-left: 12px;
+}
+
+/* CSS for modal buttons */
+.modal-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+  background-color: #0056b3;
+}
+
+/* CSS for modal width */
+#changePasswordForm {
+  width: 400px; 
+  height: 320px; 
+  background-color: #f2f2f2; 
+  padding: 20px; 
+  margin: 20px auto; 
+  border: 1px solid rgba(224, 108, 13, 0.357);
+  background-image: url('../img/bckground3.jpg');
+  border-radius: 10px;
+  background-repeat: no-repeat;   
+}
+label[for="newPassword"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 24px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+label[for="confirmNewPassword"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 24px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+#changePasswordButton {
+  margin-top: 30px;
+  width: 190px;
+  margin-left: 5px;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #c3bcbc;
+  transition: background-color 0.3s ease;
+  height: 50px;
+}
+#exitModalButton{
+  margin-top: 30px;
+  width: 150px;
+  margin-left: 8px;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #c3bcbc;
+  transition: background-color 0.3s ease;
+  height: 50px;
+}
+
+/* Additional CSS for overall page layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0e0e0; /* Set overall background color */
+}
+
+.container {
+  max-width: 500px; 
+  margin: 20px auto; }
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    z-index: 1000; /* ensure it's above other content */
+  }
+  
